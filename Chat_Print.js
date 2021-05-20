@@ -1,10 +1,11 @@
-player.onChatCommand("print",  [ChatArgument.string2],function ({ string2: cmd }) {
+player.onChatCommand("print",  [ChatArgument.string2],function ({ string2: argument }) {
     blocks.print(
-    "" + cmd,
+    "" + argument,
     Block.YellowConcrete,
     positions.add(
     player.position(),
-    positions.create(0, 4, 0)
+    positions.create(-argument.length*3^2/2, 0, -8) /** 置中算法=字符串长度x符号块实际间隔长度x符号块平均长度（非精准） 
+    Text_Block Centre adjustment algorithm **/  
     ),
     CompassDirection.East
     )
